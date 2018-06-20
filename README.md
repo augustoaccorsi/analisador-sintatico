@@ -1,2 +1,2 @@
-# analisador-lexico
-trabalho do grau a de tradutores
+# analisador-sintatico
+trabalho do grau b de tradutores

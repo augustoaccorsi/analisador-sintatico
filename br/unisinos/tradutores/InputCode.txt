@@ -1,0 +1,38 @@
+def int foo(int a, int b, int c) {
+	return a + 2;
+}
+
+def bool isEven(int number){
+	int aux;
+	aux = number/2;
+	if(number/2 == aux){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+def void main() {
+	int b;
+	int a;
+	double d;
+	int aux;
+	
+	d = d + d * 4 - (6 / 5);
+	b = ReadInteger();
+	a = b + 2;
+	Print(a, b, d);
+	aux = foo(a, d, 3);
+	foo(a + 2, d/2, a == b && d >= 1.0);
+	
+	int number;
+	if(isEven(foo(a, d, 3))){
+		Print("é par");
+	}
+	else{
+		if(isEven(foo(a, d, 3)) == false){
+			Print("é impar");
+		}
+	}
+}
