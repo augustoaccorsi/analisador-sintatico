@@ -38,7 +38,6 @@ public class Main {
 		while (currentToken != StreamTokenizer.TT_EOF) {
 			token = findToken(token, reservedWords, st, currentToken);
 			if (token != null) {
-			//	System.out.print(token.toString());
 				token.setLine(st.lineno());
 				tokenList.add(token);
 				token = null;
@@ -48,9 +47,6 @@ public class Main {
 		}
 		
 		SintaticalAnalyses sintatical = new SintaticalAnalyses(tokenList, reservedWords);
-	
-		
-		//aqui teremos os tokens 
 	}
 
 	private static Token findToken(Token token, List<String> reservedWords, StreamTokenizer st, int currentToken)
