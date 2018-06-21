@@ -6,12 +6,10 @@ public class SintaticalAnalyses {
 	private List<Token> tokens = null;
 	private Token tok;
 	private int index;
-	private List<String> reservedWords = null;
 
 	public SintaticalAnalyses(List<Token> tokens, List<String> reservedWords) {
 		this.tokens = tokens;
 		this.index = 0;
-		this.reservedWords = reservedWords;
 		getNext();
 		try {
 			this.program();
@@ -21,24 +19,16 @@ public class SintaticalAnalyses {
 		System.out.println("Success!");
 	}
 
-	// private boolean isReserverdWord() {
-	//
-	// }
-
 	private void getNext() {
 		if (index == tokens.size()) {
 			tok = null;
 			return;
 		}
 		tok = tokens.get(index);
-		if (tok.getValue().equals("1")) {
-			int a;
-			a = 2;
-		}
 		index++;
 	}
 
-	private void consume(String token) { // usar o tipo do token.value
+	private void consume(String token) {
 		if (tok.getValue().equals(token))
 			getNext();
 		else
@@ -237,7 +227,6 @@ public class SintaticalAnalyses {
 				expression();
 			}
 		} else if (tok.getType() == Types.Id) {
-			// consume(tok.getValue());
 			if (tokens.get(index).getValue().equals("(")) {
 				funcCall();
 				if (tok.getType() == Types.Relational_Op || tok.getType() == Types.equal
@@ -283,7 +272,6 @@ public class SintaticalAnalyses {
 					if (isExpression() == true)
 						argList();
 					consume(")");
-					// consume(";");
 					break;
 				default:
 					throwError(tok);
